@@ -1,17 +1,25 @@
-package com.example.demo.demo.service.user.impl;
+package com.example.demo.demo.domain.user;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Created by Arthur Asatryan.
  * Date: 12/20/17
  * Time: 6:44 PM
  */
+@Entity
 public class User {
 
     //region Properties
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String email;

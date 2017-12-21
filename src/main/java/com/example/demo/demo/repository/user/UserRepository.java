@@ -1,5 +1,6 @@
-package com.example.demo.demo.service.user.impl;
+package com.example.demo.demo.repository.user;
 
+import com.example.demo.demo.domain.user.User;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -8,4 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  * Time: 6:33 PM
  */
 public interface UserRepository extends CrudRepository<User, Long> {
+    User findByEmail(final String email);
 }
