@@ -47,6 +47,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> findByEmail(final String email) {
         Assert.notNull(email, "The email should not be null");
+        LOGGER.debug("Getting user for email - {}", email);
         return Optional.ofNullable(userRepository.findByEmail(email));
     }
     //endregion

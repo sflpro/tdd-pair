@@ -43,11 +43,9 @@ public class UserServiceIntegrationTest {
     @Test
     public void testFindByEmail() {
         // given
-        final String email = UUID.randomUUID().toString();
-        final String password = UUID.randomUUID().toString();
-        final User user = createAndPersistUser(email, password);
+        final User user = createAndPersistUser();
         // when
-        final Optional<User> result = userService.findByEmail(email);
+        final Optional<User> result = userService.findByEmail(user.getEmail());
         // then
         assertNotNull(result);
         assertTrue(result.isPresent());
@@ -56,8 +54,8 @@ public class UserServiceIntegrationTest {
     //endregion
 
     //region Utility methods
-    private User createAndPersistUser(final String email, final String password) {
-        return userService.create(email, password);
+    private User createAndPersistUser() {
+        return userService.create(UUID.randomUUID().toString(), UUID.randomUUID().toString());
     }
     //endregion
 
