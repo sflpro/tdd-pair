@@ -21,10 +21,9 @@ public class UserServiceImpl implements UserService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
+    //region Dependencies
     @Autowired
     private UserRepository userRepository;
-
-    //region Dependencies
     //endregion
 
     //region Constructors
